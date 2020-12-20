@@ -1,0 +1,11 @@
+h1 {
+    font-size: 40px;
+}
+
+p {
+    color: blueviolet;
+}
+
+ul li {
+    list-style-type: upper-alpha;
+}
