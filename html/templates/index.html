@@ -2,8 +2,22 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.css">
+    <script src="../static/js/bootstrap/bootstrap.js"></script>
+    <script src="../static/js/jquery/jquery-3.5.1.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        $(document).ready(function() {
+            $("#exampleInputPassword1").keyup(function() {
+                if ($(this).val() == "") {
+                    $("#exampleSubmit1").addClass("disabled")
+                } else {
+                    $("#exampleSubmit1").removeClass("disabled")
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Hello Penn</h1>
@@ -27,6 +41,18 @@
         Email: <input type="email" name="username"/>
         Password: <input type="password" name="password"/>
         <input type="submit" value="Login"/>
+    </form>
+    <form action="/login" method="post">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary disabled" id="exampleSubmit1">Submit</button>
     </form>
 </body>
 </html>
